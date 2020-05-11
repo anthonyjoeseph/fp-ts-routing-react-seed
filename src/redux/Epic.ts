@@ -33,8 +33,11 @@ const epic = (
             text: O.some('from route'),
           })),
         ),
-        default: () => AppAction.as.SetText({
+        Landing: () => AppAction.as.SetText({
           text: O.none,
+        }),
+        NotFound: () => AppAction.as.Navigate({
+          route: AppRoute.as.Landing({ value: {} }),
         }),
       })),
     );

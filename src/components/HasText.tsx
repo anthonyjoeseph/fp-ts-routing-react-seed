@@ -20,7 +20,7 @@ const HasText = ({
           }));
         }}
       >
-        go to landing
+        hide
       </button>
     </div>
   );

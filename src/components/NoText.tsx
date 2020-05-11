@@ -8,8 +8,6 @@ const NoText = () => {
   const dispatch = useDispatch();
   return (
     <div>
-      landing
-      <br/>
       <button
         onClick={() => {
           dispatch(AppAction.as.SetText({
@@ -20,7 +18,7 @@ const NoText = () => {
           }));
         }}
       >
-        go to route
+        show
       </button>
     </div>
   );
