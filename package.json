@@ -26,7 +26,7 @@
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
     "rxjs": "^6.5.5",
-    "rxjs-first-router": "0.0.11",
+    "rxjs-first-router": "0.0.12",
     "typescript": "^3.8.3"
   },
   "scripts": {

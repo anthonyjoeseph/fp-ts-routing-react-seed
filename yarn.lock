@@ -9188,10 +9188,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs-first-router@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/rxjs-first-router/-/rxjs-first-router-0.0.11.tgz#21eae4b35f0ba7a7e6756d1f0ebb4bf4bd7c3bc8"
-  integrity sha512-N69SwQtFIjFkSPudbAK8VA7jbkErQUArORfjtII6HRQCgNxGMEI8VR2S/uwQH25pAqrcoMHJoPSCk8LAn8joxQ==
+rxjs-first-router@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/rxjs-first-router/-/rxjs-first-router-0.0.12.tgz#8b665f547a1d6d7b3aaf4a94eb5add11cb9a80e2"
+  integrity sha512-VRYAXXcEScVgNfFT7TND9/AT+a5PQplS9u6nlH1jAi4X3vz2DNgk8McqAmYjCTY1wAtmnWgXAMr1XhenU1KgSw==
   dependencies:
     "@types/history" "^4.7.5"
     history "^4.10.1"
