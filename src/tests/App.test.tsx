@@ -8,8 +8,8 @@ import AppAction from 'redux/AppAction';
 import { AppState } from 'redux/AppState';
 import { Store } from 'redux';
 
-describe('App Component', () => {
-  it('renders learn react link', () => {
+describe('Whole App', () => {
+  it('\'/show\' renders \'from route\' or \'from button\' appropriately', () => {
     const router: Router = createMockRouter();
 
     // set the initial route
@@ -26,21 +26,21 @@ describe('App Component', () => {
     );
 
     expect(routeHistory[0] === '/show').toBeTruthy();
-    const fromRouteText = screen.getByText(/from route/i);
+    const fromRouteText: HTMLElement = screen.getByText(/from route/i);
     expect(fromRouteText).toBeInTheDocument();
 
-    const goToLandingButton = screen.getByText(/go to landing/i);
+    const goToLandingButton: HTMLElement = screen.getByText(/go to landing/i);
     fireEvent.click(goToLandingButton);
     expect(routeHistory[1] === '/').toBeTruthy();
 
-    const landingText = screen.getByText(/landing/i);
+    const landingText: HTMLElement = screen.getByText(/landing/i);
     expect(landingText).toBeInTheDocument();
 
-    const goToRouteButton = screen.getByText(/go to route/i);
+    const goToRouteButton: HTMLElement = screen.getByText(/go to route/i);
     fireEvent.click(goToRouteButton);
     expect(routeHistory[2] === '/show').toBeTruthy();
 
-    const fromButtonText = screen.getByText(/from button/i);
+    const fromButtonText: HTMLElement = screen.getByText(/from button/i);
     expect(fromButtonText).toBeInTheDocument();
   });
 })
