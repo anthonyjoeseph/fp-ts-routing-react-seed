@@ -1,17 +1,13 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import * as O from 'fp-ts/lib/Option';
 import { pipe } from 'fp-ts/lib/pipeable';
 import { AppState } from '../redux/AppState';
 import NoText from './NoText';
 import HasText from './HasText';
 
-interface AppProps {
-  appState: AppState;
-}
-
-const App = ({ appState }: AppProps) => pipe(
-  appState.state,
+const App = () => pipe(
+  useSelector((rootState: AppState) => rootState.state),
   O.map(text => (
     <HasText
       text={text}
@@ -22,6 +18,4 @@ const App = ({ appState }: AppProps) => pipe(
   ))
 );
 
-const mapStateToProps = (appState: AppState): AppProps => ({ appState })
-
-export default connect(mapStateToProps)(App);
+export default App;

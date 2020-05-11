@@ -13,7 +13,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/redux": "^3.6.0",
     "fp-ts-routing": "^0.5.3",
-    "fp-ts-routing-redux": "0.0.4",
+    "history": "^4.10.1",
     "immutability-helper": "^3.0.1",
     "io-ts": "^2.1.2",
     "morphic-ts": "^0.8.0-rc.2",
@@ -26,6 +26,7 @@
     "redux": "^4.0.5",
     "redux-observable": "^1.2.0",
     "rxjs": "^6.5.5",
+    "rxjs-first-router": "0.0.11",
     "typescript": "^3.8.3"
   },
   "scripts": {

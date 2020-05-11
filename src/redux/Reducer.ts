@@ -1,33 +1,29 @@
 import * as O from 'fp-ts/lib/Option'
 import { pipe } from 'fp-ts/lib/pipeable'
-import { Reducer } from "redux";
+import { Reducer, Action } from "redux";
 import AppAction from "./AppAction";
 import { AppState } from "./AppState";
-import { AppRoute } from './AppRoute';
 
-const reducer = (
-  initialState: AppState,
-): Reducer<AppState, AppAction> => (
-  state,
-  action,
-): AppState => {
-  if (!state) return initialState;
-  return AppAction.match({
-    OnRoute: ({ route }): AppState => AppRoute.match({
-      Show: () => pipe(
-        state.state,
-        O.map((state): AppState => ({ state: O.some(state) })),
-        O.getOrElse((): AppState => ({ state: O.some('From route') })),
-      ),  
-      default: () => ({ state: O.none }),
-    })(route),
-    Navigate: ({ text }): AppState => pipe(
+const reducerWithInitialState = <S, A extends Action>(
+  reducer: (action: A, state: S) => S | undefined
+) => (
+  initialState: S
+): Reducer<S, A> => (nullableState, action) => {
+  const oldState = nullableState || initialState;
+  const newState = reducer(action, oldState);
+  if (newState) return newState;
+  return oldState;
+}
+
+const reducer = reducerWithInitialState<AppState, AppAction>(
+  AppAction.match<AppState | undefined>({
+    SetText: ({ text }) => pipe(
       O.fromNullable(text),
-      O.map((text) => ({ state: O.some(text) })),
-      O.getOrElse(() => state),
+      O.map((text) => ({ state: text })),
+      O.getOrElse((): AppState | undefined => undefined),
     ),
-    default: (): AppState => state
-  })(action)
-};
+    default: () => undefined
+  })
+);
 
 export default reducer;

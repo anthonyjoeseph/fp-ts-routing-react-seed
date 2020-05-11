@@ -4629,17 +4629,6 @@ forwarded@~0.1.2:
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
   integrity sha1-mMI9qxF1ZXuMBXPozszZGw/xjIQ=
 
-fp-ts-routing-redux@0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/fp-ts-routing-redux/-/fp-ts-routing-redux-0.0.4.tgz#410f3dfd34f5f0b1ead7f9f6fae0fdd4d16c7f1f"
-  integrity sha512-0uPFQJJBTUIxiAzUytbr76Te2sx6dZW5hP3AB7UCWdvudGSooiIvC0N/ywbUUW0vmeqGsnmOEVsTnoIO9UO+Jw==
-  dependencies:
-    "@types/history" "^4.7.5"
-    "@types/redux" "^3.6.0"
-    fp-ts "^2.5.3"
-    history "^4.10.1"
-    redux "^4.0.5"
-
 fp-ts-routing@^0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/fp-ts-routing/-/fp-ts-routing-0.5.3.tgz#39376447ba396cffd9249102a5c5392ea29047f3"
@@ -9198,6 +9187,15 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   integrity sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=
   dependencies:
     aproba "^1.1.1"
+
+rxjs-first-router@0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/rxjs-first-router/-/rxjs-first-router-0.0.11.tgz#21eae4b35f0ba7a7e6756d1f0ebb4bf4bd7c3bc8"
+  integrity sha512-N69SwQtFIjFkSPudbAK8VA7jbkErQUArORfjtII6HRQCgNxGMEI8VR2S/uwQH25pAqrcoMHJoPSCk8LAn8joxQ==
+  dependencies:
+    "@types/history" "^4.7.5"
+    history "^4.10.1"
+    rxjs "^6.5.5"
 
 rxjs@^6.5.3, rxjs@^6.5.5:
   version "6.5.5"

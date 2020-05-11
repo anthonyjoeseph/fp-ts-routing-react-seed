@@ -4,10 +4,15 @@ import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import configureStore from 'redux/Store';
+import { createRouter } from 'rxjs-first-router';
+
+const router = createRouter();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={configureStore()}><App /></Provider>
+    <Provider store={configureStore(router)}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,38 +1,24 @@
 import { createStore, applyMiddleware } from 'redux'
-import {
-  router, Navigation
-} from 'fp-ts-routing-redux'
-import { parser, formatter, AppRoute } from './AppRoute'
+import { Router } from 'rxjs-first-router'
 import AppAction from './AppAction'
-import { initialAppState } from './AppState'
+import { initialAppState, AppState } from './AppState'
 import reducer from './Reducer'
+import { createEpicMiddleware } from 'redux-observable';
+import epic from './Epic'
 
-const configureStore = () => {
-
-  const {
-    middleware,
-    dispatchFirstRoute,
-  } = router(
-    parser,
-    formatter,
-    (route) => AppRoute.is.NotFound(route)
-    ? AppAction.of.Navigate({ navigation: Navigation.replace(AppRoute.as.Landing({ value: {} })), text: undefined })
-    : AppAction.of.OnRoute({ route }),
-    AppAction.match({
-      Navigate: ({ navigation }) => navigation,
-      default: () => undefined,
-    }),
-  );
-
+const configureStore = (router: Router) => {
+  const epicMiddleware = createEpicMiddleware<AppAction, AppAction, AppState>();
   let store = createStore(
     reducer(initialAppState),
     initialAppState,
     applyMiddleware(
-      middleware,
+      epicMiddleware,
     ),
   );
+  epicMiddleware.run(epic(router.navigator, router.route$));
 
-  dispatchFirstRoute(store);
+  // handle the initial route
+  router.pushCurrentRoute();
 
   return store;
 }
