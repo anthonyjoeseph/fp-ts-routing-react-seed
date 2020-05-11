@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware } from 'redux'
+import { createEpicMiddleware } from 'redux-observable';
 import { Router } from 'rxjs-first-router'
 import AppAction from './AppAction'
 import { initialAppState, AppState } from './AppState'
 import reducer from './Reducer'
-import { createEpicMiddleware } from 'redux-observable';
 import epic from './Epic'
 
 const configureStore = (router: Router) => {

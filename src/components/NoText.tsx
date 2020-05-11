@@ -1,6 +1,6 @@
+import * as O from 'fp-ts/lib/Option';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import * as O from 'fp-ts/lib/Option';
 import AppAction from '../redux/AppAction';
 import { AppRoute } from '../redux/AppRoute';
 

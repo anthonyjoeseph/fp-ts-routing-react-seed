@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from '../components/App';
-import { createMockRouter, Router } from 'rxjs-first-router';
-import configureStore from 'redux/Store';
+import { Store } from 'redux';
 import { Provider } from 'react-redux';
+import { createMockRouter, Router } from 'rxjs-first-router';
 import AppAction from '../redux/AppAction';
 import { AppState } from '../redux/AppState';
-import { Store } from 'redux';
+import configureStore from '../redux/Store';
+import App from '../components/App';
 
 describe('Whole App', () => {
   it('\'/show\' renders \'from route\' or \'from button\' appropriately', () => {

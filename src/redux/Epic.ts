@@ -1,13 +1,13 @@
-import { parser, AppRoute, formatter } from './AppRoute'
-import AppAction, { Navigate } from './AppAction'
-import { AppState } from './AppState'
-import { Epic } from 'redux-observable';
-import { Navigator } from 'rxjs-first-router'
-import * as r from 'rxjs';
-import * as ro from 'rxjs/operators';
 import * as O from 'fp-ts/lib/Option';
 import { pipe } from 'fp-ts/lib/pipeable';
 import { flow } from 'fp-ts/lib/function';
+import * as r from 'rxjs';
+import * as ro from 'rxjs/operators';
+import { Epic } from 'redux-observable';
+import { Navigator } from 'rxjs-first-router';
+import { parser, AppRoute, formatter } from './AppRoute';
+import AppAction, { Navigate } from './AppAction';
+import { AppState } from './AppState';
 
 const epic = (
   navigator: Navigator,
