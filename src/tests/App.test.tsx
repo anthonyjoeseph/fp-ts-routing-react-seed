@@ -4,8 +4,8 @@ import App from '../components/App';
 import { createMockRouter, Router } from 'rxjs-first-router';
 import configureStore from 'redux/Store';
 import { Provider } from 'react-redux';
-import AppAction from 'redux/AppAction';
-import { AppState } from 'redux/AppState';
+import AppAction from '../redux/AppAction';
+import { AppState } from '../redux/AppState';
 import { Store } from 'redux';
 
 describe('Whole App', () => {
