@@ -17,7 +17,7 @@ Also [morphic-ts](https://github.com/sledorze/morphic-ts) and [React Testing Lib
 - enforce route logic completeness at compile time
 - effortless loading indicators
 - effortless redirects
-- robustness - every library is either an industry standard, dirt simple, or both
+- robustness - every library is either in common usage, simple, or both
 - clarity - properly modelled statically typed code is self-documenting
 
 # Philosophy
