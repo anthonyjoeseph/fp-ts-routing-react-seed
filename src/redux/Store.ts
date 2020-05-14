@@ -16,10 +16,6 @@ const configureStore = (router: Router) => {
     ),
   );
   epicMiddleware.run(epic(router.navigator, router.route$));
-
-  // handle the initial route
-  router.pushCurrentRoute();
-
   return store;
 }
 

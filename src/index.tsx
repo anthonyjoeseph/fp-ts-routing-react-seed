@@ -7,10 +7,13 @@ import configureStore from 'redux/Store';
 import { createRouter } from 'rxjs-first-router';
 
 const router = createRouter();
+const store = configureStore(router);
+// handle the initial route
+router.pushCurrentRoute();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={configureStore(router)}>
+    <Provider store={store}>
       <App />
     </Provider>
   </React.StrictMode>,
