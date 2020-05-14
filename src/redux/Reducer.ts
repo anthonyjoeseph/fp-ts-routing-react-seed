@@ -19,7 +19,6 @@ const reducer = reducerWithInitialState<AppState, AppAction>(
   AppAction.match<AppState | undefined>({
     SetText: ({ text }) => pipe(
       O.fromNullable(text),
-      O.map((text) => ({ state: text })),
       O.getOrElse((): AppState | undefined => undefined),
     ),
     default: () => undefined

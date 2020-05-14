@@ -27,7 +27,7 @@ const epic = (
       ro.map(parser),
       ro.map(AppRoute.match({
         Show: () => pipe(
-          state$.value.state,
+          state$.value,
           O.map(() => undefined),
           O.getOrElse((): AppAction | undefined => AppAction.as.SetText({
             text: O.some('from route'),

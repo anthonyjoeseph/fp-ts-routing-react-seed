@@ -7,7 +7,7 @@ import NoText from './NoText';
 import HasText from './HasText';
 
 const App = () => pipe(
-  useSelector((rootState: AppState) => rootState.state),
+  useSelector((rootState: AppState) => rootState),
   O.map(text => (
     <HasText
       text={text}

@@ -1,7 +1,5 @@
 import * as O from 'fp-ts/lib/Option';
 
-export interface AppState {
-  state: O.Option<string>
-}
+export type AppState = O.Option<string>
 
-export const initialAppState: AppState = { state: O.none }
+export const initialAppState: AppState = O.none
