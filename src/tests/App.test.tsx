@@ -12,7 +12,7 @@ import configureStore from '../redux/Store';
 import App from '../components/App';
 
 describe('Whole App', () => {
-  it('\'/show\' renders \'from route\' or \'from button\' appropriately', () => {
+  it('\'/show\' renders \'from route\' or \'from button\' appropriately', async () => {
     const router: Router = createMockRouter();
     const store: Store<AppState, AppAction> = configureStore(router);
 
@@ -46,10 +46,10 @@ describe('Whole App', () => {
     expect(fromButtonText).toBeInTheDocument();
 
     closeRouter.next();
-    return routeHistory.then(r => assert.deepStrictEqual(r, [
+    await routeHistory.then(r => assert.deepStrictEqual(r, [
       '/show', 
       '/',
       '/show',
-    ]))
+    ]));
   });
 })
