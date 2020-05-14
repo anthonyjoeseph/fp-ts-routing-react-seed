@@ -36,11 +36,11 @@ describe('Whole App', () => {
     const fromRouteText: HTMLElement = screen.getByText(/from route/i);
     expect(fromRouteText).toBeInTheDocument();
 
-    const goToLandingButton: HTMLElement = screen.getByText(/hide/i);
-    fireEvent.click(goToLandingButton);
+    const hideButton: HTMLElement = screen.getByText(/hide/i);
+    fireEvent.click(hideButton);
 
-    const goToRouteButton: HTMLElement = screen.getByText(/show/i);
-    fireEvent.click(goToRouteButton);
+    const showButton: HTMLElement = screen.getByText(/show/i);
+    fireEvent.click(showButton);
 
     const fromButtonText: HTMLElement = screen.getByText(/from button/i);
     expect(fromButtonText).toBeInTheDocument();
