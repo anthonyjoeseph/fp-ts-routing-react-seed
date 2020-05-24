@@ -5,7 +5,7 @@ import * as r from 'rxjs';
 import * as ro from 'rxjs/operators';
 import { Epic } from 'redux-observable';
 import { Navigator } from 'rxjs-first-router';
-import { parser, AppRoute, formatter } from './AppRoute';
+import { parse, AppRoute, format } from './AppRoute';
 import AppAction, { Navigate } from './AppAction';
 import { AppState } from './AppState';
 
@@ -18,13 +18,13 @@ const epic = (
       ro.filter<AppAction, Navigate>(AppAction.is.Navigate),
       ro.map(n => n.route),
       ro.map(flow(
-        formatter,
+        format,
         navigator.push,
       )),
     );
   const routeHandler = route$
     .pipe(
-      ro.map(parser),
+      ro.map(parse),
       ro.map(AppRoute.match({
         Show: () => pipe(
           state$.value,

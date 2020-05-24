@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@morphic-ts/adt": "^1.5.0-alpha.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -16,8 +17,7 @@
     "fp-ts-routing": "^0.5.3",
     "io-ts": "^2.2.2",
     "monocle-ts": "^2.1.0",
-    "morphic-ts": "^0.8.0-rc.2",
-    "morphic-ts-routing": "0.0.11",
+    "morphic-ts-routing": "^0.0.45",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

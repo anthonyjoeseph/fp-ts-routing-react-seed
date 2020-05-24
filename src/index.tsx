@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import configureStore from 'redux/Store';
 import { createRouter } from 'rxjs-first-router';
+import configureStore from 'redux/Store';
+import { Provider } from 'react-redux';
 
-const router = createRouter();
+export const router = createRouter();
 const store = configureStore(router);
 // handle the initial route
 router.pushCurrentRoute();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store} >
       <App />
     </Provider>
   </React.StrictMode>,

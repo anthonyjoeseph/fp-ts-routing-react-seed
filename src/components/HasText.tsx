@@ -1,23 +1,23 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import AppAction from '../redux/AppAction';
-import { AppRoute } from '../redux/AppRoute';
+import { AppRoute, format } from '../redux/AppRoute';
+import { router } from 'index';
 
 const HasText = ({
   text,
 }: {
   text: string;
 }) => {
-  const dispatch = useDispatch();
   return (
     <div>
       {text}
       <br/>
       <button
         onClick={() => {
-          dispatch(AppAction.as.Navigate({
-            route: AppRoute.as.Landing({ value: {} }),
-          }));
+          router.navigator.push(
+            format(
+              AppRoute.as.Landing({ value: {} })
+            )
+          );
         }}
       >
         hide

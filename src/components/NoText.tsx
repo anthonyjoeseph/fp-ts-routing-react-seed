@@ -1,8 +1,8 @@
 import * as O from 'fp-ts/lib/Option';
 import React from 'react';
+import { AppRoute } from 'redux/AppRoute';
 import { useDispatch } from 'react-redux';
-import AppAction from '../redux/AppAction';
-import { AppRoute } from '../redux/AppRoute';
+import AppAction from 'redux/AppAction';
 
 const NoText = () => {
   const dispatch = useDispatch();

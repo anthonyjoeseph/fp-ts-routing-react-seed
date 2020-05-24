@@ -1,5 +1,5 @@
 import * as O from 'fp-ts/lib/Option';
-import { makeADT, ADTType, ofType } from 'morphic-ts/lib/adt/index'
+import { makeADT, ADTType, ofType } from '@morphic-ts/adt'
 import { AppRoute } from './AppRoute';
 
 const Navigate = ofType<{ type: 'Navigate'; route: AppRoute }>();
